@@ -228,8 +228,6 @@ When a CloudWatch data point comes in with a timestamp between 12:00pm and 12:01
 
 If a new data point with a timestamp between 12:00 and 12:01 arrives, the timer resets. It keeps resetting every time more data points for that window arrive. The window will not be sent for aggregation until the timer reaches 0.
 
-If the timer for a later data point elapses before an earlier data point, the event timer method waits for the earlier timer to elapse before aggregating the later data point.
-
 For best results, make sure your timer is equal to or longer than your window duration time. If the timer is less than your window duration and your data flow is inconsistent, then your data may be evaluated before all of your data points arrive. This could cause you to be notified incorrectly.
 
 ## Cadence [#cadence]
